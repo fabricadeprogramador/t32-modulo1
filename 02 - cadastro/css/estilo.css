@@ -1,0 +1,70 @@
+body {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+nav {
+  background-color: rgb(9, 163, 198);
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  float: left;
+  padding: 20px 0px;
+  position: fixed;
+  box-shadow: 5px 0px 10px gray;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav li {
+  padding: 10px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  width: 70%;
+  float: right;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+form {
+  width: 70%;
+  margin: auto;
+}
+
+form div {
+  margin: 20px 0px;
+}
+
+form input[type='text'],
+form input[type='email'],
+form input[type='datetime-local'] {
+  width: 100%;
+  padding: 10px;
+}
+
+form button {
+  background-color: rgb(9, 163, 198);
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.centralizar {
+  text-align: center;
+}
