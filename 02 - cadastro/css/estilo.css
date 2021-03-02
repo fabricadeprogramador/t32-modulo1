@@ -64,14 +64,14 @@ form input[type='datetime-local'] {
   padding: 10px;
 }
 
-form button {
+button {
   background-color: rgb(9, 163, 198);
   color: white;
   padding: 10px;
   border: none;
 }
 
-form button:hover {
+button:hover {
   background-color: rgb(13, 101, 121);
   cursor: pointer;
   transition: 1s;

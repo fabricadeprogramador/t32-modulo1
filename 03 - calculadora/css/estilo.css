@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  width: 30%;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: steelblue;
+  border-radius: 5px;
+  box-shadow: 2px 2px.8px gray;
+}
+
+.card div {
+  margin: 20px 0px;
+}
+
+.card input[type='number'] {
+  width: 60%;
+  padding: 8px;
+}
+
+.card button {
+  padding: 8px;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.ocultar-elemento {
+  display: none;
+}
+
+.exibir-elemento {
+  display: block;
+}
+
+#titulo {
+  color: white;
+  font-weight: 100;
+}
