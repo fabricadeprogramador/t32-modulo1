@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Calculadora</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/calculadora.js"></script>
+  </head>
+  <body>
+    <div class="card ocultar-elemento" id="card-mensagem">
+      <span id="mensagem"></span>
+      <img
+        src="img/fechar.svg"
+        alt="Fechar"
+        id="imagem-fechar"
+        onclick="fecharMensagem()"
+      />
+    </div>
+    <div class="card">
+      <div>
+        <h1 id="titulo">Calculadora</h1>
+      </div>
+
+      <div>
+        <input type="number" id="n1" placeholder="Número 1" />
+      </div>
+
+      <div>
+        <input type="number" id="n2" placeholder="Número 2" />
+      </div>
+
+      <div>
+        <button onclick="somar()">Somar</button>
+        <button onclick="subtrair()">Subtrair</button>
+        <button onclick="multiplicar()">Multiplicar</button>
+        <button onclick="dividir()">Dividir</button>
+      </div>
+
+      <div>
+        <button onclick="limpar()">Limpar</button>
+      </div>
+    </div>
+  </body>
+</html>

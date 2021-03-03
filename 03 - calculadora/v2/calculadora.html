@@ -8,6 +8,12 @@
   <body>
     <div class="card ocultar-elemento" id="card-mensagem">
       <span id="mensagem"></span>
+      <img
+        src="img/fechar.svg"
+        alt="Fechar"
+        id="imagem-fechar"
+        onclick="fecharMensagem()"
+      />
     </div>
     <div class="card">
       <div>
@@ -23,10 +29,10 @@
       </div>
 
       <div>
-        <button onclick="somar()">Somar</button>
-        <button onclick="subtrair()">Subtrair</button>
-        <button onclick="multiplicar()">Multiplicar</button>
-        <button onclick="dividir()">Dividir</button>
+        <button onclick="resolver('+')">Somar</button>
+        <button onclick="resolver('-')">Subtrair</button>
+        <button onclick="resolver('*')">Multiplicar</button>
+        <button onclick="resolver('/')">Dividir</button>
       </div>
 
       <div>
