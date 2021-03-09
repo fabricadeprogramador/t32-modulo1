@@ -3,6 +3,7 @@
     <title>Cadastro de Clientes</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/script.js"></script>
   </head>
   <body>
     <nav>
@@ -27,13 +28,18 @@
     </nav>
 
     <main>
+      <div class="mensagens" id="div-msg">
+        <img src="img/fechar.svg" alt="Fechar" onclick="fecharMensagens()" />
+        <span id="textoMensagem"> Texto de teste.... </span>
+      </div>
+
       <div class="centralizar">
         <h1>Cadastro de Cliente</h1>
       </div>
 
       <form>
         <div>
-          <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Nome" id="nome" />
         </div>
 
         <div>
@@ -90,7 +96,7 @@
         </div>
       </form>
       <div class="centralizar">
-        <button onclick="">Salvar</button>
+        <button onclick="validar()">Salvar</button>
       </div>
     </main>
   </body>

@@ -81,6 +81,28 @@ button:hover {
   text-align: center;
 }
 
+.mensagens {
+  display: none;
+  background-color: firebrick;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%;
+  position: absolute;
+  opacity: 0.9;
+  animation: slide-message 1s;
+}
+
+.mensagens.show {
+  display: block;
+}
+
+.mensagens img {
+  width: 10px;
+  cursor: pointer;
+  float: right;
+}
+
 @media (max-width: 600px) {
   nav {
     width: 0%;
@@ -88,6 +110,18 @@ button:hover {
 
   main {
     width: 100%;
+  }
+}
+
+@keyframes slide-message {
+  from {
+    transform: translate3d(0px, -50px, 0px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 0.9;
   }
 }
 
