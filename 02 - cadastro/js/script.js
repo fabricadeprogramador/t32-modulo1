@@ -58,7 +58,7 @@ function validar() {
       'Cliente salvo com sucesso!'
     document.getElementById('div-msg').classList.add('show')
   } else {
-    document.getElementById('textoMensagem').textContent = bufferMensagem
+    document.getElementById('textoMensagem').innerText = bufferMensagem
     document.getElementById('div-msg').classList.add('show')
   }
 }
