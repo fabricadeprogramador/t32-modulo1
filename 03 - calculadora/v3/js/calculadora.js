@@ -1,16 +1,18 @@
-var numero1
-var numero2
-
 class CalculadoraController {
+  constructor() {
+    this.numero1
+    this.numero2
+  }
+
   lerCampos() {
-    numero1 = parseFloat(document.getElementById('n1').value)
-    numero2 = parseFloat(document.getElementById('n2').value)
+    this.numero1 = parseFloat(document.getElementById('n1').value)
+    this.numero2 = parseFloat(document.getElementById('n2').value)
   }
 
   resolver(operador) {
     this.lerCampos()
 
-    var resultado = eval(numero1 + operador + numero2)
+    var resultado = eval(this.numero1 + operador + this.numero2)
 
     this.limpar()
     this.mensageiro(resultado)
