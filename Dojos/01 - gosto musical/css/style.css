@@ -1,0 +1,46 @@
+body {
+  font-family: sans-serif;
+}
+#card {
+  margin: 50px auto;
+  width: 40%;
+  background-color: rgb(234, 236, 236);
+  text-align: center;
+  padding: 80px;
+}
+input[type='text'] {
+  width: 100%;
+  border: none;
+  padding: 10px;
+}
+
+#check {
+  margin-top: 25px;
+}
+#rotulo {
+  text-align: left;
+  margin-top: 25px;
+}
+
+button {
+  margin: 20px 30px;
+  cursor: pointer;
+  background-color: rgb(194, 191, 191);
+  padding: 10px;
+  border: none;
+}
+
+.usuario {
+  display: inline-block;
+  width: 50%;
+}
+
+.relatorio {
+  display: inline-block;
+  border: 1px solid black;
+  width: 48%;
+}
+
+.div1 {
+  width: 100%;
+}

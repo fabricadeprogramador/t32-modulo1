@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fábrica de programador</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div id="card">
+      <div>
+        <input type="text" placeholder="Nome" id="nome" />
+      </div>
+      <div>Preferências Musicais</div>
+      <div id="check">
+        <input type="checkbox" id="mpb" name="estilo" />
+        <label for="mpb">Mpb</label>
+        <input type="checkbox" id="rock" name="estilo" />
+        <label for="rock">Rock</label>
+        <input type="checkbox" id="pagode" name="estilo" />
+        <label for="pagode">Pagode</label>
+        <input type="checkbox" id="funk" name="estilo" />
+        <label for="funk">Funk</label>
+        <input type="checkbox" id="forro" name="estilo" />
+        <label for="forro">Forro</label>
+        <input type="checkbox" id="classica" name="estilo" />
+        <label for="classsica">Classica</label>
+      </div>
+      <div>
+        <button onclick="jukebox.adicionar()">Adicionar</button>
+        <button onclick="jukebox.relatorio()">Relatório</button>
+      </div>
+      <div class="div1">
+        <div class="usuario">
+          <ul id="lista"></ul>
+        </div>
+        <div class="relatorio">
+          <div>
+            <label>MBP:</label>
+            <span id="mpb-qtd"></span>
+          </div>
+
+          <div>
+            <label>Rock:</label>
+            <span id="rock-qtd"></span>
+          </div>
+
+          <div>
+            <label>Clássica:</label>
+            <span id="classica-qtd"></span>
+          </div>
+
+          <div>
+            <label>Pagode:</label>
+            <span id="pagode-qtd"></span>
+          </div>
+
+          <div>
+            <label>Forró:</label>
+            <span id="forro-qtd"></span>
+          </div>
+          <div>
+            <label>Funk:</label>
+            <span id="funk-qtd"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
