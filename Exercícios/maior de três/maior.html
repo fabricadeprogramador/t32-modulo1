@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <title>Maior de Três</title>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Calculadora Maior</h1>
+
+      <div class="entrada-container">
+        <div class="um-terco-container">
+          <div>
+            <label for="numero1">Número 1:</label>
+          </div>
+          <div>
+            <input type="number" id="numero1" />
+          </div>
+        </div>
+
+        <div class="um-terco-container">
+          <div>
+            <label for="numero2">Número 2:</label>
+          </div>
+
+          <div>
+            <input type="number" id="numero2" />
+          </div>
+        </div>
+
+        <div class="um-terco-container">
+          <div>
+            <label for="numero3">Número 3:</label>
+          </div>
+
+          <div>
+            <input type="number" id="numero3" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button onclick="controller.executar()">Maior</button>
+      </div>
+    </div>
+  </body>
+</html>

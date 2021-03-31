@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  width: 40%;
+  margin: 50px auto;
+  text-align: center;
+  padding: 30px;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 8px;
+}
+
+.card div {
+  margin: 10px 10px;
+}
+
+.card h1 {
+  font-weight: 300;
+}
+
+.entrada-container {
+  display: flex;
+}
+
+.um-terco-container {
+  width: 30%;
+}
+
+button {
+  padding: 7px;
+  background-color: white;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+}
