@@ -16,6 +16,23 @@
       </div>
 
       <div>
+        <input
+          type="number"
+          id="idadeConvidado"
+          placeholder="Idade do Convidado"
+        />
+      </div>
+
+      <div>
+        <label for="sexoConvidado">Sexo:</label>
+        <select name="sexo" id="sexoConvidado">
+          <option value="">Selecione...</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+        </select>
+      </div>
+
+      <div>
         <button onclick="convidadoController.adicionar()">Adicionar</button>
         <button onclick="convidadoController.cancelar()">Cancelar</button>
       </div>
@@ -24,7 +41,7 @@
     <!-- CARD DE LISTAGEM -->
     <div class="card" id="listagem">
       <h2>Convidados Adicionados</h2>
-      <table>
+      <table id="tabela">
         <thead>
           <th>ID</th>
           <th>Nome</th>
@@ -33,14 +50,7 @@
           <th></th>
           <th></th>
         </thead>
-        <tbody id="tabela">
-          <tr>
-            <td>0</td>
-            <td>Jão</td>
-            <td>52</td>
-            <td>M</td>
-          </tr>
-        </tbody>
+        <tbody id="tabelaCorpo"></tbody>
       </table>
     </div>
   </body>
