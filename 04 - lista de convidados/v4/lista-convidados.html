@@ -23,7 +23,7 @@
         />
       </div>
 
-      <div>
+      <div id="divSelect">
         <label for="sexoConvidado">Sexo:</label>
         <select name="sexo" id="sexoConvidado">
           <option value="">Selecione...</option>
@@ -33,7 +33,7 @@
       </div>
 
       <div>
-        <button onclick="convidadoController.adicionar()">Adicionar</button>
+        <button onclick="convidadoController.salvar()">Salvar</button>
         <button onclick="convidadoController.cancelar()">Cancelar</button>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <!-- CARD DE LISTAGEM -->
     <div class="card" id="listagem">
       <h2>Convidados Adicionados</h2>
-      <table id="tabela">
+      <table id="tabela" class="estilo-tabela">
         <thead>
           <th>ID</th>
           <th>Nome</th>
