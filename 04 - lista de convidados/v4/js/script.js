@@ -2,6 +2,10 @@ class ListaConvidadoController {
   constructor() {
     this.contador = 1
     this.idEdicao = null
+    this.nomes = [
+      { nome: 'Jão', idade: 15 },
+      { nome: 'Maria', idade: 27 }
+    ]
   }
 
   lerDados() {
