@@ -11,7 +11,10 @@ class ListaConvidadoController {
 
     document.getElementById('quantidade').innerText =
       'Quantidade de Convidados: ' + this.convidados.length
-    document.getElementById('lista').innerText = this.convidados.join('\n')
+
+    for (let i = 0; i < this.convidados.length; i++) {
+      console.log(this.convidados[i] + ' ')
+    }
 
     this.cancelar()
   }
