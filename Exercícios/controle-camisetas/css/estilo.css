@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  width: 60%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.card div {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.card input {
+  width: 40%;
+  padding: 5px;
+}
+
+.card h1 {
+  font-weight: 300;
+  color: gray;
+}
+
+.card button {
+  padding: 10px;
+  border: none;
+  border: 1px solid gray;
+  color: white;
+  border-radius: 5px;
+  background-color: darkcyan;
+}
+
+#tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabela img {
+  width: 20px;
+  cursor: pointer;
+}
+
+th,
+td {
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;
+}
+
+th {
+  color: gray;
+  font-weight: 300;
+}

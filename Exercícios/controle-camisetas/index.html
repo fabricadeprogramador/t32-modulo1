@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Pedidos de Camisetas HT</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/CamiseteriaController.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Calculadora de pedidos de camisetas da HT</h1>
+
+      <div>
+        <input type="number" id="qtdP" placeholder="Quantidade P (R$ 10,00)" />
+      </div>
+
+      <div>
+        <input type="number" id="qtdM" placeholder="Quantidade M (R$ 12,00)" />
+      </div>
+
+      <div>
+        <input type="number" id="qtdG" placeholder="Quantidade G (R$ 15,00)" />
+      </div>
+
+      <div>
+        <button type="button" onclick="camiseteriaController.salvar()">
+          Salvar Pedido
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th>P</th>
+            <th>M</th>
+            <th>G</th>
+            <th>Total</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tabelaCorpo"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
