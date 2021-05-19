@@ -9,13 +9,22 @@ class EstacionamentoController {
     let carroNovo = this.lerDados()
 
     if (this.validar(carroNovo)) {
-      this.adicionar(carroNovo)
+      this.editId != -1 ? this.editar(carroNovo) : this.adicionar(carroNovo)
     }
 
     this.cancelar()
     this.gerarTabela()
+  }
 
-    console.log(this.carros)
+  editar(carro) {
+    let indice = this.encontrarIndiceObjeto(this.editId)
+
+    this.carros[indice].nome = carro.nome
+    this.carros[indice].marca = carro.marca
+    this.carros[indice].ano = carro.ano
+
+    // carro.id = this.editId
+    // this.carros.splice(indice, 1, carro)
   }
 
   adicionar(carroNovo) {
@@ -26,19 +35,24 @@ class EstacionamentoController {
     this.geradorId++
   }
 
+  encontrarIndiceObjeto(id) {
+    let i = 0
+    let indice = -1
+
+    while (i < this.carros.length && indice == -1) {
+      if (this.carros[i].id == id) {
+        indice = i
+      }
+      i++
+    }
+
+    return indice
+  }
+
   excluir(id) {
     if (confirm("Deeja realmente deletar o ID " + id)) {
-      let i = 0
-      let indice = -1
-
-      while (i < this.carros.length && indice == -1) {
-        if (this.carros[i].id == id) {
-          indice = i
-          this.carros.splice(i, 1)
-        }
-
-        i++
-      }
+      let indice = this.encontrarIndiceObjeto(id)
+      this.carros.splice(indice, 1)
 
       this.gerarTabela()
     }
@@ -64,6 +78,7 @@ class EstacionamentoController {
   }
 
   cancelar() {
+    this.editId = -1
     document.getElementById("nomeVeiculo").value = ""
     document.getElementById("marcaVeiculo").value = ""
     document.getElementById("anoVeiculo").value = ""
@@ -92,10 +107,12 @@ class EstacionamentoController {
     colunaMarca.innerText = carro.marca
     colunaAno.innerText = carro.ano
 
-    let carroParametro = JSON.stringify(carro)
+    // let carroParametro = JSON.stringify(carro)
 
-    colunaEditar.innerHTML = `<img src="img/edit.svg" onclick="estacionamentoController.preparaEdicao(${carroParametro})">`
-    colunaExcluir.innerHTML = `<img src="img/delete.svg" onclick="estacionamentoController.excluir(${carro.id})">`
+    colunaEditar.innerHTML = `<img src='img/edit.svg' onclick='estacionamentoController.preparaEdicao(${JSON.stringify(
+      carro
+    )})'/>`
+    colunaExcluir.innerHTML = `<img src="img/delete.svg" onclick="estacionamentoController.excluir(${carro.id})"/>`
 
     //O CÓDICO COMENTADO É EQUIVALENTE AS DUAS LINHAS ANTERIORES
 
@@ -113,15 +130,33 @@ class EstacionamentoController {
   }
 
   preparaEdicao(carro) {
-    alert("aaaa")
-    // this.editId = carro.id;
+    this.editId = carro.id
 
-    // document.getElementById("nomeVeiculo").value = carro.nome;
-    // document.getElementById("marcaVeiculo").value = carro.marca;
-    // document.getElementById("anoVeiculo").value = carro.ano;
+    document.getElementById("nomeVeiculo").value = carro.nome
+    document.getElementById("marcaVeiculo").value = carro.marca
+    document.getElementById("anoVeiculo").value = carro.ano
   }
 
-  calcularResultado() {}
+  calcularResultado() {
+    let soma = 0
+    let maisNovo = this.carros[0]
+    let maisVelho = this.carros[0]
+
+    for (let i = 0; i < this.carros.length; i++) {
+      soma += this.carros[i].ano
+
+      if (this.carros[i].ano < maisVelho.ano) maisVelho = this.carros[i]
+      if (this.carros[i].ano > maisNovo.ano) maisNovo = this.carros[i]
+    }
+
+    document.getElementById("media").innerText = soma / this.carros.length
+    document.getElementById("maisVelho").innerText = this.gerarString(maisVelho)
+    document.getElementById("maisNovo").innerText = this.gerarString(maisNovo)
+  }
+
+  gerarString(carro) {
+    return `Nome: ${carro.nome}\nMarca: ${carro.marca}\nAno: ${carro.ano}`
+  }
 }
 
 let estacionamentoController = new EstacionamentoController()
