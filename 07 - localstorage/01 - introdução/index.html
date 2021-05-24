@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Introdução LocalStorage</title>
+  </head>
+  <body onload="atualizarEstadoLS()">
+    <h3>Cadastro de Cliente</h3>
+    <div>
+      <input type="text" id="nome" placeholder="Insira o nome" />
+      <input type="text" id="sobrenome" placeholder="Insira o sobrenome" />
+      <input type="number" id="idade" placeholder="Insira a idade" />
+      <button onclick="salvar()">Salvar</button>
+      <button onclick="atualizarEstadoLS()">Buscar</button>
+      <button onclick="imprimirClientes()">Imprimir</button>
+    </div>
+    <ol id="resultado"></ol>
+  </body>
+
+  <script>
+    let clientes = []
+
+    function salvar() {
+      let cliente = {}
+
+      cliente.nome = document.getElementById("nome").value
+      cliente.sobrenome = document.getElementById("sobrenome").value
+      cliente.idade = document.getElementById("idade").value
+
+      clientes.push(cliente)
+
+      localStorage.setItem("clientes", JSON.stringify(clientes))
+
+      document.getElementById("nome").value = ""
+      document.getElementById("sobrenome").value = ""
+      document.getElementById("idade").value = ""
+    }
+
+    function atualizarEstadoLS() {
+      clientes = JSON.parse(localStorage.getItem("clientes"))
+      imprimirClientes()
+    }
+
+    function imprimirClientes() {
+      let lista = document.getElementById("resultado")
+      lista.innerText = ""
+      for (let i = 0; i < clientes.length; i++) {
+        let item = document.createElement("li")
+        item.innerText = `${clientes[i].nome} ${clientes[i].sobrenome} - ${clientes[i].idade}`
+
+        lista.appendChild(item)
+      }
+    }
+  </script>
+</html>
