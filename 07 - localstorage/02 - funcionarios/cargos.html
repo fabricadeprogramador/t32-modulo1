@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Cadastro de Cargos</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/CargoController.js"></script>
+  </head>
+  <body onload="cargoController.inicializarEstadoDoLS()">
+    <nav>
+      <h2>Menu</h2>
+      <ul>
+        <a href="funcionarios.html">
+          <li>Funcionários</li>
+        </a>
+        <a href="cargos.html">
+          <li>Cargos</li>
+        </a>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="mensagens" id="div-msg">
+        <img
+          src="img/fechar.svg"
+          alt="Fechar"
+          onclick="cargoController.fecharMensagem()"
+        />
+        <span id="textoMensagem"> </span>
+      </div>
+
+      <div class="centralizar">
+        <h1>Cadastro de Cargos</h1>
+      </div>
+
+      <form>
+        <div>
+          <input type="text" placeholder="Descrição" id="descricao" />
+        </div>
+
+        <div>
+          <input type="number" placeholder="Salário" id="salario" />
+        </div>
+      </form>
+      <div class="centralizar">
+        <button onclick="cargoController.salvar()">Salvar</button>
+      </div>
+
+      <div>
+        <table class="estilo-tabela">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Salário</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

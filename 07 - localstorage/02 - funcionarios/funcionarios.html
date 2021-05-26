@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Cadastro de Funcionários</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/FuncionarioController.js"></script>
+  </head>
+  <body onload="funcionarioController.inicializarEstadoDoLS()">
+    <nav>
+      <h2>Menu</h2>
+      <ul>
+        <a href="funcionarios.html">
+          <li>Funcionários</li>
+        </a>
+        <a href="cargos.html">
+          <li>Cargos</li>
+        </a>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="mensagens" id="div-msg">
+        <img
+          src="img/fechar.svg"
+          alt="Fechar"
+          onclick="funcionarioController.fecharMensagem()"
+        />
+        <span id="textoMensagem"> </span>
+      </div>
+
+      <div class="centralizar">
+        <h1>Cadastro de Funcionários</h1>
+      </div>
+
+      <form>
+        <div>
+          <input type="text" placeholder="Nome" id="nome" />
+        </div>
+
+        <div>
+          <label>Sexo: </label>
+
+          <label for="masc">Masculino</label>
+          <input type="radio" id="masc" name="sexo" value="M" />
+
+          <label for="fem">Feminino</label>
+          <input type="radio" id="fem" name="sexo" value="F" />
+        </div>
+
+        <div>
+          <label for="cargos">Cargos:</label>
+          <select name="cargos" id="cargos">
+            <option value="">Selecione...</option>
+          </select>
+        </div>
+      </form>
+      <div class="centralizar">
+        <button onclick="funcionarioController.salvar()">Salvar</button>
+      </div>
+
+      <div>
+        <table class="estilo-tabela">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Sexo</th>
+              <th>Cargo</th>
+              <th>Salário</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+body {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+nav {
+  background-color: rgb(9, 163, 198);
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  float: left;
+  padding: 20px 0px;
+  position: fixed;
+  box-shadow: 5px 0px 10px gray;
+  transition: 0.8s;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  padding: 10px;
+  list-style: none;
+}
+
+nav li:hover {
+  background-color: rgb(13, 101, 121);
+  transition: 0.5s;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  width: 70%;
+  float: right;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+form {
+  width: 70%;
+  margin: auto;
+}
+
+form div {
+  margin: 20px 0px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+}
+
+button {
+  background-color: rgb(9, 163, 198);
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(13, 101, 121);
+  cursor: pointer;
+  transition: 1s;
+}
+
+.centralizar {
+  text-align: center;
+}
+
+.mensagens {
+  display: none;
+  background-color: firebrick;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%;
+  position: absolute;
+  opacity: 0.9;
+  animation: slide-message 1s;
+}
+
+.mensagens.show {
+  display: block;
+}
+
+.mensagens img {
+  width: 10px;
+  cursor: pointer;
+  float: right;
+}
+
+.estilo-tabela {
+  margin-top: 50px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;
+}
+
+th {
+  color: gray;
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 0%;
+  }
+
+  main {
+    width: 100%;
+  }
+}
+
+@keyframes slide-message {
+  from {
+    transform: translate3d(0px, -50px, 0px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 0.9;
+  }
+}
+
+/* @keyframes */
