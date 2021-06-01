@@ -1,0 +1,23 @@
+<html>
+  <script>
+    function divisao(n1, n2, sucesso, fracasso) {
+      let resultado = 0
+      if (n2 > 0) {
+        resultado = n1 / n2
+        sucesso(resultado)
+      } else {
+        fracasso("Divisão por zero!")
+      }
+    }
+
+    function imprimirConsole(msg) {
+      console.log(msg)
+    }
+
+    function imprimirErro(msg) {
+      alert("ERRO: " + msg)
+    }
+
+    divisao(10, 0, imprimirConsole, imprimirErro)
+  </script>
+</html>

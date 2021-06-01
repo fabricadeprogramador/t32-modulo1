@@ -1,0 +1,39 @@
+<html>
+  <script>
+    function divisao(n1, n2) {
+      return new Promise(function (resolve, reject) {
+        let resultado = 0
+        if (n2 > 0) {
+          setTimeout(() => {
+            resolve(n1 / n2)
+          }, 3000)
+        } else {
+          setTimeout(() => {
+            reject("Divisão por zero!")
+          }, 5000)
+        }
+      })
+    }
+
+    function sucesso(msg) {
+      console.log(msg)
+    }
+
+    function erro(msg) {
+      alert("ERRO: " + msg)
+    }
+
+    // divisao(10, 0).then(sucesso).catch(erro)
+
+    let x = divisao(10, 1)
+      .then((resultado) => {
+        return resultado * 0.1
+      })
+      .then((res) => {
+        sucesso(res)
+      })
+      .catch((resultadoErr) => {
+        erro(resultadoErr)
+      })
+  </script>
+</html>
