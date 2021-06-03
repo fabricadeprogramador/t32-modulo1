@@ -37,6 +37,7 @@ class ListaConvidadoController {
       }
     }
     xhttp.open("POST", "http://localhost:3000/convidados", true)
+    xhttp.setRequestHeader("Content-Type", "application/json")
     xhttp.send(JSON.stringify(conv))
   }
 
