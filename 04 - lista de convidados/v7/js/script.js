@@ -22,7 +22,7 @@ class ListaConvidadoController {
         this.gerarTabela()
       }
     }
-    xhttp.open("GET", "http://localhost:3000/convidados", true)
+    xhttp.open("GET", "https://lista-convidados.herokuapp.com/convidados", true)
     xhttp.send()
   }
 
@@ -36,7 +36,11 @@ class ListaConvidadoController {
         this.buscarConvidadosAPI()
       }
     }
-    xhttp.open("POST", "http://localhost:3000/convidados", true)
+    xhttp.open(
+      "POST",
+      "https://lista-convidados.herokuapp.com/convidados",
+      true
+    )
     xhttp.setRequestHeader("Content-Type", "application/json")
     xhttp.send(JSON.stringify(conv))
   }
