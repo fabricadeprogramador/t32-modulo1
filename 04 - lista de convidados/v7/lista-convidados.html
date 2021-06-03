@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Lista de Convidados</title>
+    <meta charset="UTF-8" />
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body onload="convidadoController.buscarConvidadosAPI()">
+    <!-- CARD DE CADASTRO -->
+    <div class="card" id="cadastro">
+      <h2>Lista de Convidados</h2>
+
+      <div>
+        <input type="text" id="nomeConvidado" placeholder="Nome do Convidado" />
+      </div>
+
+      <div>
+        <input
+          type="number"
+          id="idadeConvidado"
+          placeholder="Idade do Convidado"
+        />
+      </div>
+
+      <div id="divSelect">
+        <label for="sexoConvidado">Sexo:</label>
+        <select name="sexo" id="sexoConvidado">
+          <option value="">Selecione...</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+        </select>
+      </div>
+
+      <div>
+        <button onclick="convidadoController.inserirConvidadoAPI()">
+          Salvar
+        </button>
+        <button onclick="convidadoController.cancelar()">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- CARD DE LISTAGEM -->
+    <div class="card" id="listagem">
+      <h2>Convidados Adicionados</h2>
+      <table id="tabela" class="estilo-tabela">
+        <thead>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Sexo</th>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody id="tabelaCorpo"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
