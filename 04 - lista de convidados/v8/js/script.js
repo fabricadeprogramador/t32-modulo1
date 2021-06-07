@@ -8,16 +8,21 @@ class ListaConvidadoController {
    * Métodos de consumo da API
    */
 
-  buscarConvidadosAPI() {
-    var xhttp = new XMLHttpRequest()
-    xhttp.onreadystatechange = () => {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        this.convidados = JSON.parse(xhttp.responseText)
-        this.gerarTabela()
-      }
-    }
-    xhttp.open("GET", "https://lista-convidados.herokuapp.com/convidados", true)
-    xhttp.send()
+  async buscarConvidadosAPI() {
+    const response = await fetch(
+      "https://lista-convidados.herokuapp.com/convidados"
+    )
+    const convidados = await response.json()
+    this.convidados = convidados
+    this.gerarTabela()
+    // .then((resposta) => {
+    //   // console.log(resposta)
+    //   return resposta.json()
+    // })
+    // .then((convidados) => {
+    //   this.convidados = convidados
+    //   this.gerarTabela()
+    // })
   }
 
   buscarConvidadoEdicaoAPI(id) {
@@ -42,20 +47,39 @@ class ListaConvidadoController {
   inserirConvidadoAPI() {
     let conv = this.lerDados()
     conv.idade = parseInt(conv.idade)
-    var xhttp = new XMLHttpRequest()
-    xhttp.onreadystatechange = () => {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        this.cancelar()
+
+    fetch("https://lista-convidados.herokuapp.com/convidados", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(conv)
+    })
+      .then((response) => {
+        return response.json()
+      })
+      .then((convidadoNovo) => {
+        console.log("CONVIDADO NOVO: " + JSON.stringify(convidadoNovo))
         this.buscarConvidadosAPI()
-      }
-    }
-    xhttp.open(
-      "POST",
-      "https://lista-convidados.herokuapp.com/convidados",
-      true
-    )
-    xhttp.setRequestHeader("Content-Type", "application/json")
-    xhttp.send(JSON.stringify(conv))
+      })
+
+    // let conv = this.lerDados()
+    // conv.idade = parseInt(conv.idade)
+    // var xhttp = new XMLHttpRequest()
+    // xhttp.onreadystatechange = () => {
+    //   if (xhttp.readyState == 4 && xhttp.status == 200) {
+    //     this.cancelar()
+    //     this.buscarConvidadosAPI()
+    //   }
+    // }
+    // xhttp.open(
+    //   "POST",
+    //   "https://lista-convidados.herokuapp.com/convidados",
+    //   true
+    // )
+    // xhttp.setRequestHeader("Content-Type", "application/json")
+    // xhttp.send(JSON.stringify(conv))
   }
 
   deletarConvidadoAPI(id) {
